@@ -1,5 +1,7 @@
 export default class Mapa {
-  constructor(x, y, w, h, sqmSizeX, sqmSizeY, maxSqmX, maxSqmY) {
+  constructor(ctx, x, y, w, h, sqmSizeX, sqmSizeY, maxSqmX, maxSqmY, borderColor) {
+    this.ctx = ctx;
+    this.borderColor = borderColor;
     this.sqmSizeX = sqmSizeX;
     this.sqmSizeY = sqmSizeY;
     this.maxSqmX = maxSqmX;
@@ -15,4 +17,10 @@ export default class Mapa {
       h: this.sqmSizeY*this.maxSqmY
     };
   }
-  
+
+  //Desenhar borda  
+  draw() {
+    this.ctx.strokeStyle = this.borderColor;
+    this.ctx.strokeRect(this.position.x, this.position.y, this.size.w, this.size.h);
+  }
+}  
