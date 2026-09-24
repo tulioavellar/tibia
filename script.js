@@ -14,9 +14,19 @@ let sqmSizeY = 32;
 //Definir tela visual do jogo
 let maxSqmX = 15;
 let maxSqmY = 11;
+let mapaView = {
+  position: {
+    x: (innerWidth/2) - ((sqmSizeX*maxSqmX)/2),
+    y: 60
+  },
+  size: {
+    w: sqmSizeX*maxSqmX,
+    h: sqmSizeY*maxSqmY
+  }
+};
 ctx.strokeStyle = "#ccc";
-ctx.fillRect(0, 0, sqmSizeX*maxSqmX, sqmSizeY*maxSqmY);
-ctx.strokeRect(0, 0, sqmSizeX*maxSqmX, sqmSizeY*maxSqmY);
+ctx.fillRect(mapaView.position.x, mapaView.position.y, mapaView.size.w, mapaView.size.h);
+ctx.strokeRect(mapaView.position.x, mapaView.position.y, mapaView.size.w, mapaView.size.h);
 
 //Definir a Sprite usada
 const spriteMapa = new Image();
