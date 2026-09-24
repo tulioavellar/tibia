@@ -16,9 +16,8 @@ let sqmSizeY = 32;
 let maxSqmX = 15;
 let maxSqmY = 11;
 
-ctx.strokeStyle = "#ccc";
-ctx.fillRect(mapaView.position.x, mapaView.position.y, mapaView.size.w, mapaView.size.h);
-ctx.strokeRect(mapaView.position.x, mapaView.position.y, mapaView.size.w, mapaView.size.h);
+let mapaView = new Mapa(ctx, 0, 70, 0, 0, sqmSizeX, sqmSizeY, maxSqmX, maxSqmY, "#ccc");
+mapaView.draw();
 
 //Definir a Sprite usada
 const spriteMapa = new Image();
