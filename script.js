@@ -7,7 +7,7 @@ cnv.height = innerHeight;
 
 //Definir a Sprite usada
 const spriteMapa = new Image();
-spriteMapa.src = "src/sprites/mapa/sprite-mapa.jgp";
+spriteMapa.src = "src/sprites/mapa/sprite-mapa.jpg";
 
 //Desenhar na tela
 
