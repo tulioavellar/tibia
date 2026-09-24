@@ -14,7 +14,9 @@ let sqmSizeY = 32;
 //Definir tela visual do jogo
 let maxSqmX = 15;
 let maxSqmY = 11;
+ctx.strokeStyle = "#ccc";
 ctx.fillRect(0, 0, sqmSizeX*maxSqmX, sqmSizeY*maxSqmY);
+ctx.strokeRect(0, 0, sqmSizeX*maxSqmX, sqmSizeY*maxSqmY);
 
 //Definir a Sprite usada
 const spriteMapa = new Image();
