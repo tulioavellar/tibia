@@ -30,10 +30,7 @@ function startGame() {
 }
 
 //Criar variável de SQM
-let meuSqm1 = new Sqm(ctx, 0, 0, 32, 32, spriteMapa, 0, 0, 32, 32, 0, 0, 32, 32);
-let meuSqm2 = new Sqm(ctx, 0, 0, 32, 32, spriteMapa, 0, 0, 32, 32, 64, 64, 32, 32);
-
-console.log(meuSqm1);
+//let meuSqm1 = new Sqm(ctx, 0, 0, 32, 32, spriteMapa, 0, 0, 32, 32, 0, 0, 32, 32);
 
 meuSqm1.renderiza();
 meuSqm2.renderiza();
