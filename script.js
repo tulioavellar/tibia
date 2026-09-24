@@ -1,4 +1,5 @@
 import Sqm from "./sqm.js";
+import Mapa from "./mapa.js";
 
 const cnv = document.querySelector("#tela");
 const ctx = cnv.getContext("2d");
@@ -14,16 +15,7 @@ let sqmSizeY = 32;
 //Definir tela visual do jogo
 let maxSqmX = 15;
 let maxSqmY = 11;
-let mapaView = {
-  position: {
-    x: (innerWidth/2) - ((sqmSizeX*maxSqmX)/2),
-    y: 60
-  },
-  size: {
-    w: sqmSizeX*maxSqmX,
-    h: sqmSizeY*maxSqmY
-  }
-};
+
 ctx.strokeStyle = "#ccc";
 ctx.fillRect(mapaView.position.x, mapaView.position.y, mapaView.size.w, mapaView.size.h);
 ctx.strokeRect(mapaView.position.x, mapaView.position.y, mapaView.size.w, mapaView.size.h);
