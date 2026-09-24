@@ -47,7 +47,7 @@ function startGame() {
 }
 
 //Mostrar o SQM
-let meuSqm1 = new Sqm(ctx, 0, 0, 40, 40, spriteMapa, 0, 0, 40, 40, 0, 0, 40, 40);
+let meuSqm1 = new Sqm(ctx, 0, 0, 32, 32, spriteMapa, 0, 0, 32, 32, 0, 0, 32, 32);
 
 console.log(meuSqm1);
 
