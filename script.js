@@ -13,6 +13,7 @@ spriteMapa.src = "src/sprites/mapa.png";
 
 class Sqm {
   constructor(contexto, x, y, w, h, sprite, sx, sy, sw, sh, px, py, pw, ph) {
+    this.contexto = contexto;
     this.sprite = {
       img: sprite,
       x: sx,
@@ -35,9 +36,25 @@ class Sqm {
       h: h
     };
   }
+  //Renderizar o SQM
+  rederiza() {
+    this.contexto.drawImage(this.sprite.img, this.sprite.x, this.sprite.y, this.sprite.w, this.sprite.h, this.sprite.px, this.sprite.py, this.sprite.pw, this.sprite.ph);
+  }
+}
+
+function startGame() {
+
 }
 
 //Mostrar o SQM
 let meuSqm1 = new Sqm(ctx, 0, 0, 40, 40, spriteMapa, 0, 0, 40, 40, 0, 0, 40, 40);
 
 console.log(meuSqm1);
+
+meuSqm1.renderiza();
+
+//Carregar o jogo
+spriteMapa.onload = function () {
+  console.log("Carregou o jogo");
+  startGame();
+}
