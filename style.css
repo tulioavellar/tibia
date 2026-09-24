@@ -5,6 +5,6 @@ body {
   box-sizing: border-box;
   overflow: hidden;
 }
-#mapa {
-  
+#tela {
+  background: #F00;
 }
