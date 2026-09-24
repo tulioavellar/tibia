@@ -7,7 +7,7 @@ export default class Mapa {
     
     this.position = {
       x: (innerWidth/2) - ((this.sqmSizeX*this.maxSqmX)/2),
-      y: 60,
+      y: y
     };
     
     this.size = {
