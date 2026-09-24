@@ -1,11 +1,20 @@
 import Sqm from "./sqm.js";
 
-const cnv = document.querySelector("#mapa");
+const cnv = document.querySelector("#tela");
 const ctx = cnv.getContext("2d");
 
 //Definir tamanho do Canvas
 cnv.width = innerWidth;
 cnv.height = innerHeight;
+
+//Definições iniciais
+let sqmSizeX = 32;
+let sqmSizeY = 32;
+
+//Definir tela visual do jogo
+let maxSqmX = 15;
+let maxSqmY = 11;
+ctx.fillRect(0, 0, sqmSizeX*maxSqmX, sqmSizeY*maxSqmY);
 
 //Definir a Sprite usada
 const spriteMapa = new Image();
@@ -17,7 +26,7 @@ function startGame() {
 
 }
 
-//Mostrar o SQM
+//Criar variável de SQM
 let meuSqm1 = new Sqm(ctx, 0, 0, 32, 32, spriteMapa, 0, 0, 32, 32, 0, 0, 32, 32);
 let meuSqm2 = new Sqm(ctx, 0, 0, 32, 32, spriteMapa, 0, 0, 32, 32, 64, 64, 32, 32);
 
