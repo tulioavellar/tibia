@@ -22,8 +22,9 @@ let maxSqmY = 11;
 //Definir o Mapa View
 let todosSqms = [];
 let borderColor = "#ccc";
-let mapaView = new Mapa(ctx, 0, 70, 0, 0, sqmRenderSizeX, sqmRenderSizeY, maxSqmX, maxSqmY, borderColor, todosSqms);
-mapaView.renderizaBorda();
+
+//Criar o Mapa View
+let mapaView = new Mapa(ctx, sqmRenderSizeX, sqmRenderSizeY, maxSqmX, maxSqmY, borderColor, todosSqms);
 
 //Definir a Sprite usada
 const spriteMapa = new Image();
@@ -49,10 +50,11 @@ function createMapView() {
 //Inicia o jogo
 function startGame() {
      
-    //Criar o MapaView de SQMs
-    createMapView();
-    //Exibir os SQMs do MapaView
-    mapaView.renderizaSqms();
+   //Criar o MapaView de SQMs
+   createMapView();
+   //Exibir os SQMs do MapaView
+   mapaView.renderizaSqms();
+   mapaView.renderizaBorda();
   
 };
 
