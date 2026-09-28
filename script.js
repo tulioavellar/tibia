@@ -18,7 +18,6 @@ let sqmRenderSizeY = 32;
 //Definir tela visual do jogo
 let maxSqmX = 15;
 let maxSqmY = 11;
-let totalSqms = maxSqmX * maxSqmY;
 
 //Definir o Mapa View
 let todosSqms = [];
@@ -32,19 +31,9 @@ spriteMapa.src = "src/sprites/mapa/sprite-mapa.jpg";
 
 //Inicia o jogo
 function startGame() {
-  //Loop para criar os SQMS
-  for (let i=0; i < totalSqms; i++) {
-    let posXSqm = 0;
-    let posYSqm = 0;
-    let posRenderSqmX = 72;
-    let posRenderSqmY = 72;
-  
-    //Criar variável de SQM
-    let meuSqm = new Sqm(ctx, posXSqm, posYSqm, sqmSizeX, sqmSizeY, spriteMapa, posRenderSqmX, posRenderSqmY, sqmSizeX, sqmSizeY, posXSqm, posYSqm, sqmRenderSizeX, sqmRenderSizeY);
-
     mapaView.sqms.push(meuSqm);
-  }
-  //Fim do Loop
+  
+  //Exibir os SQMs do MapaView
   mapaView.renderizaSqms();
   
 }
@@ -53,4 +42,23 @@ function startGame() {
 spriteMapa.onload = function () {
   console.log("Carregou o jogo");
   startGame();
+}
+
+//Funções
+function creatMapView() {
+   //Loop para criar os SQMS
+  for (let i=0; i < maxSqmX; i++) {
+    for (let j=0; j <maxSqmY; j++){
+      let posXSqm = mapaView.position.x + (i * mapaView.sqmRenderSizeX);
+      let posYSqm = mapaView.position.y + (j * mapaView.sqmRenderSizeY);
+      let posRenderSqmX = 72;
+      let posRenderSqmY = 72;
+  
+      //Criar variável de SQM
+      let meuSqm = new Sqm(ctx, posXSqm, posYSqm, sqmSizeX, sqmSizeY, spriteMapa, posRenderSqmX, posRenderSqmY, sqmSizeX, sqmSizeY, posXSqm, posYSqm, sqmRenderSizeX, sqmRenderSizeY);
+      //Faz o primeiro render
+      meuSqm.renderiza();
+    }
+  }
+  //Fim do Loop
 }
