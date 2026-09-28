@@ -1,20 +1,20 @@
 export default class Mapa {
-  constructor(ctx, x, y, w, h, sqmSizeX, sqmSizeY, maxSqmX, maxSqmY, borderColor, sqms) {
+  constructor(ctx, x, y, w, h, sqmRenderSizeX, sqmRenderSizeY, maxSqmX, maxSqmY, borderColor, sqms) {
     this.ctx = ctx;
     this.borderColor = borderColor;
-    this.sqmSizeX = sqmSizeX;
-    this.sqmSizeY = sqmSizeY;
+    this.sqmRenderSizeX = sqmRenderSizeX;
+    this.sqmRenderSizeY = sqmRenderSizeY;
     this.maxSqmX = maxSqmX;
     this.maxSqmY = maxSqmY;
     this.sqms = sqms;
     this.position = {
-      x: (innerWidth/2) - ((this.sqmSizeX*this.maxSqmX)/2),
-      y: y
+      x: (innerWidth/2) - ((this.sqmRenderSizeX*this.maxSqmX)/2),
+      y: (innerHeight/2) - ((this.sqmRenderSizeY*this.maxSqmY)/2
     };
     
     this.size = {
-      w: this.sqmSizeX*this.maxSqmX,
-      h: this.sqmSizeY*this.maxSqmY
+      w: sqmRenderSizeX,
+      h: sqmRenderSizeY
     };
   }
 
