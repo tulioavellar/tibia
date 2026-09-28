@@ -10,11 +10,11 @@ export default class Mapa {
     this.position = {
       x: (innerWidth/2) - ((this.sqmRenderSizeX*this.maxSqmX)/2),
       y: (innerHeight/2) - ((this.sqmRenderSizeY*this.maxSqmY)/2
-    }
+    };
     this.size = {
       w: sqmRenderSizeX,
       h: sqmRenderSizeY
-    }
+    };
   };
 
   //Desenhar borda  
