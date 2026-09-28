@@ -1,5 +1,5 @@
 export default class Mapa {
-  constructor(ctx, x, y, w, h, sqmRenderSizeX, sqmRenderSizeY, maxSqmX, maxSqmY, borderColor, sqms) {
+  constructor(ctx, sqmRenderSizeX, sqmRenderSizeY, maxSqmX, maxSqmY, borderColor, sqms) {
     this.ctx = ctx;
     this.borderColor = borderColor;
     this.sqmRenderSizeX = sqmRenderSizeX;
