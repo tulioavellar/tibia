@@ -63,3 +63,9 @@ spriteMapa.onload = function () {
   console.log("Carregou o jogo");
   startGame();
 };
+
+//Função resize da tela
+addEventListener("resize", function() {
+   console.log("Alterou Resolução");
+});
+
