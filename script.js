@@ -29,23 +29,6 @@ mapaView.renderizaBorda();
 const spriteMapa = new Image();
 spriteMapa.src = "src/sprites/mapa/sprite-mapa.jpg";
 
-//Inicia o jogo
-function startGame() {
-     
-    //Criar o MapaView de SQMs
-    createMapView();
-    //Exibir os SQMs do MapaView
-    mapaView.renderizaSqms();
-  
-};
-
-//Carregar o jogo
-spriteMapa.onload = function () {
-  console.log("Carregou o jogo");
-  startGame();
-};
-
-//Funções
 function createMapView() {
    //Loop para criar os SQMS
   for (let i=0; i < maxSqmX; i++) {
@@ -63,4 +46,19 @@ function createMapView() {
     };
   };
   //Fim do Loop
+};
+//Inicia o jogo
+function startGame() {
+     
+    //Criar o MapaView de SQMs
+    createMapView();
+    //Exibir os SQMs do MapaView
+    mapaView.renderizaSqms();
+  
+};
+
+//Carregar o jogo
+spriteMapa.onload = function () {
+  console.log("Carregou o jogo");
+  startGame();
 };
