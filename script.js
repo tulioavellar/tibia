@@ -31,10 +31,11 @@ spriteMapa.src = "src/sprites/mapa/sprite-mapa.jpg";
 
 //Inicia o jogo
 function startGame() {
-    mapaView.sqms.push(meuSqm);
-  
-  //Exibir os SQMs do MapaView
-  mapaView.renderizaSqms();
+     
+    //Criar o MapaView de SQMs
+    createMapView();
+    //Exibir os SQMs do MapaView
+    mapaView.renderizaSqms();
   
 }
 
@@ -45,7 +46,7 @@ spriteMapa.onload = function () {
 }
 
 //Funções
-function creatMapView() {
+function createMapView() {
    //Loop para criar os SQMS
   for (let i=0; i < maxSqmX; i++) {
     for (let j=0; j <maxSqmY; j++){
@@ -58,7 +59,8 @@ function creatMapView() {
       let meuSqm = new Sqm(ctx, posXSqm, posYSqm, sqmSizeX, sqmSizeY, spriteMapa, posRenderSqmX, posRenderSqmY, sqmSizeX, sqmSizeY, posXSqm, posYSqm, sqmRenderSizeX, sqmRenderSizeY);
       //Faz o primeiro render
       meuSqm.renderiza();
-    }
-  }
+    
+    };
+  };
   //Fim do Loop
-}
+};
