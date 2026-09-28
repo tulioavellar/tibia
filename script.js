@@ -42,7 +42,6 @@ function createMapView() {
       let meuSqm = new Sqm(ctx, posXSqm, posYSqm, sqmSizeX, sqmSizeY, spriteMapa, posRenderSqmX, posRenderSqmY, sqmSizeX, sqmSizeY, posXSqm, posYSqm, sqmRenderSizeX, sqmRenderSizeY);
       //Faz o primeiro render
       meuSqm.renderiza();
-    
     };
   };
   //Fim do Loop
