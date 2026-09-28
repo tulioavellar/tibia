@@ -41,7 +41,8 @@ function createMapView() {
       //Criar variável de SQM
       let meuSqm = new Sqm(ctx, posXSqm, posYSqm, sqmSizeX, sqmSizeY, spriteMapa, posRenderSqmX, posRenderSqmY, sqmSizeX, sqmSizeY, posXSqm, posYSqm, sqmRenderSizeX, sqmRenderSizeY);
       //Adiciona no array
-      mapaView.sqms.push(meuSqm); 
+      mapaView.sqms.push(meuSqm);
+      meuSqm.renderiza();
       
     };
   };
