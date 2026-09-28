@@ -12,8 +12,8 @@ export default class Mapa {
       y: (innerHeight/2) - ((this.sqmRenderSizeY*this.maxSqmY)/2)
     };
     this.size = {
-      w: sqmRenderSizeX,
-      h: sqmRenderSizeY
+      w: sqmRenderSizeX * maxSqmX,
+      h: sqmRenderSizeY * maxSqmY
     };
   };
 
