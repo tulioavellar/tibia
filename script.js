@@ -37,13 +37,13 @@ function startGame() {
     //Exibir os SQMs do MapaView
     mapaView.renderizaSqms();
   
-}
+};
 
 //Carregar o jogo
 spriteMapa.onload = function () {
   console.log("Carregou o jogo");
   startGame();
-}
+};
 
 //Funções
 function createMapView() {
