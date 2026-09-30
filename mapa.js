@@ -27,6 +27,6 @@ export default class Mapa {
   renderizaSqms() {
     this.sqms.forEach(sqm => {
       sqm.renderiza();
-    }
+    });
   };
 };  
