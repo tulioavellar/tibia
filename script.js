@@ -41,22 +41,30 @@ function createMapView() {
   
       //Criar variável de SQM
       let meuSqm = new Sqm(ctx, posXSqm, posYSqm, sqmSizeX, sqmSizeY, spriteMapa, posRenderSqmX, posRenderSqmY, sqmSizeX, sqmSizeY, posXSqm, posYSqm, sqmRenderSizeX, sqmRenderSizeY);
-      //Adicionar a primeira render
-      meuSqm.renderiza();
+      //Adiciona meuSqm no array
+      mapaView.sqms.push(meuSqm);
      };
   };
   //Fim do Loop
 };
+
 //Inicia o jogo
 function startGame() {
      
    //Criar o MapaView de SQMs
    createMapView();
+   //Inicia  função loopGame
+   loopGame();
+   
+};
+
+//Loop Game
+function loopGame() {
    //Exibir os SQMs do MapaView
    mapaView.renderizaSqms();
    mapaView.renderizaBorda();
-  
-};
+   requestAnimationFrame(loopGame);
+}
 
 //Carregar o jogo
 spriteMapa.onload = function () {
