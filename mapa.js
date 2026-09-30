@@ -25,7 +25,7 @@ export default class Mapa {
 
   //Função Renderiza os SQM
   renderizaSqms() {
-    this.sqms.forEach(sqm -> {
+    this.sqms.forEach(sqm => {
       sqm.renderiza();
     }
   };
