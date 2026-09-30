@@ -34,13 +34,22 @@ function createMapView() {
    //Loop para criar os SQMS
   for (let i=0; i < maxSqmX; i++) {
     for (let j=0; j < maxSqmY; j++){
-      let posXSqm = mapaView.position.x + (i * mapaView.sqmRenderSizeX);
-      let posYSqm = mapaView.position.y + (j * mapaView.sqmRenderSizeY);
+      let mapaViewPosX = mapaView.position.x;
+      let mapaViewPosY = mapaView.position.y;
+      let colunaAtual = i;
+      let linhaAtual = j;
+      let renderSizeX = mapaView.sqmRenderSizeX;
+      let renderSizeY = mapaView.sqmRenderSizeY;
+      
+      //Cálculo do SQM
+      let posXSqm = mapaViewPosX + (colunaAtual * renderSizeX);
+      let posYSqm = mapaViewPosY + (linhaAtual * renderSizeY);
       let posRenderSqmX = 72;
       let posRenderSqmY = 72;
-  
+       
       //Criar variável de SQM
-      let meuSqm = new Sqm(ctx, posXSqm, posYSqm, sqmSizeX, sqmSizeY, spriteMapa, posRenderSqmX, posRenderSqmY, sqmSizeX, sqmSizeY, posXSqm, posYSqm, sqmRenderSizeX, sqmRenderSizeY);
+      let meuSqm = new Sqm(ctx, spriteMapa, posRenderSqmX, posRenderSqmY, sqmSizeX, sqmSizeY, posXSqm, posYSqm, sqmRenderSizeX, sqmRenderSizeY,
+      mapaViewPosX, mapaViewPosY, colunaAtual, linhaAtual, renderSizeX, renderSizeY);
       //Adiciona meuSqm no array
       mapaView.sqms.push(meuSqm);
      };
@@ -80,6 +89,12 @@ addEventListener("resize", function() {
    mapaView.screenSize.width = innerWidth;
    mapaView.screenSize.height = innerHeight;
    mapaView.getPosition();
+
+   //Atualizar posição do mapaview nos SQM
+   mapaView.sqms.forEach(sqm => {
+      sqm.renderAtual.posX = mapaView.position.x;
+      sqm.renderAtual.posY = mapaView.position.y;
+   });
    
    //Definir tamanho da tela
    cnv.width = innerWidth;
