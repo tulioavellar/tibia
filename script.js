@@ -24,7 +24,7 @@ let todosSqms = [];
 let borderColor = "#ccc";
 
 //Criar o Mapa View
-let mapaView = new Mapa(ctx, sqmRenderSizeX, sqmRenderSizeY, maxSqmX, maxSqmY, borderColor, todosSqms);
+let mapaView = new Mapa(ctx, sqmRenderSizeX, sqmRenderSizeY, maxSqmX, maxSqmY, borderColor, todosSqms, innerWidth, innerHeight);
 
 //Definir a Sprite usada
 const spriteMapa = new Image();
@@ -75,5 +75,15 @@ spriteMapa.onload = function () {
 //Função resize da tela
 addEventListener("resize", function() {
    console.log("Alterou Resolução");
+
+   //Atualizar tamanho da tela
+   mapaView.screenSize.width = innerWidth;
+   mapaView.screenSize.height = innerHeight;
+   mapaView.getPosition();
+   
+   //Definir tamanho da tela
+   cnv.width = innerWidth;
+   cnv.height = innerHeight;
 });
+
 
